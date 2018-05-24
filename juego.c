@@ -7,10 +7,6 @@
 
 int const MOVIMIENTOS_HUFF = 2;
 
-void refrescar_campo(char campo[FILAS_CAMPO][COLS_CAMPO], juego_t juego) {
-    imprimir_juego(campo, juego);
-}
-
 int main() {
     char casa;
     char campo[FILAS_CAMPO][COLS_CAMPO];
@@ -26,19 +22,19 @@ int main() {
             while(i < MOVIMIENTOS_HUFF && !finalizo_juego(&juego)) {
                 movimiento = pedir_movimiento(juego.posicion_jugador);
                 mover_jugador(campo, movimiento, &juego);
-                refrescar_campo(campo, juego);
+                imprimir_juego(campo, juego);
                 i++;
             }
         } else {
             movimiento = pedir_movimiento(juego.posicion_jugador);
             mover_jugador(campo, movimiento, &juego);
-            refrescar_campo(campo, juego);
+            imprimir_juego(campo, juego);
         }
         if(!finalizo_juego(&juego)) {
             mover_bludgers(campo, &juego);
             mover_snitch(campo, &juego);
         }
-        refrescar_campo(campo, juego);
+        imprimir_juego(campo, juego);
     }
     mostrar_resultado(juego);
     return 0;

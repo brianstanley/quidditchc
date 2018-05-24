@@ -28,7 +28,6 @@ int main() {
         } else {
             movimiento = pedir_movimiento(juego.posicion_jugador);
             mover_jugador(campo, movimiento, &juego);
-            imprimir_juego(campo, juego);
         }
         if(!finalizo_juego(&juego)) {
             mover_bludgers(campo, &juego);

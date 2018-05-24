@@ -325,7 +325,7 @@ coordenada_t posicion_inicial_snitch() {
 }
 
 bool finalizo_juego(juego_t *juego) {
-    return (*juego).estado == 1 || (*juego).estado == 2;
+    return (*juego).estado == JUGADOR_GANO || (*juego).estado == JUGADOR_PERDIO;
 }
 
 void mostrar_resultado(juego_t juego) {
